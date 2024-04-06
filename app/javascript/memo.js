@@ -1,20 +1,17 @@
 const buildHTML = (XHR) => {
   const item = XHR.response.post;
   const html = `
-    <div class="post">
-      <div class="post-date">
-        投稿日時：${item.created_at}
-      </div>
-      <div class="post-content">
-        ${item.content}
-      </div>
-    </div>`;
-    console.log(XHR);
-    console.log(XHR.response);
-    console.log(item);
-    console.log(html);
+
+  <div class="post">
+    <div class="post-date">
+    投稿日時:${item.created_at}
+    </div>
+    <div class="post-content">
+    ${item.content}
+    </div>
+  </div>`
   return html;
-};
+}
 
 function post (){
   const form = document.getElementById("form");
@@ -32,7 +29,8 @@ function post (){
       };
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
-      list.insertAdjacentHTML("afterend", buildHTML(XHR));
+
+      list.interAdjacentHTML("afterend", buildHTML(XHR));
       formText.value = "";
     };
   });
